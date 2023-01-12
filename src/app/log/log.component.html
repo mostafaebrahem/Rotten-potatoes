@@ -1,0 +1,20 @@
+<div class="log-container  row justify-content-end px-5 ">
+  <div class="all col-md-12  text-end  my-3 d-flex flex-column justify-content-evenly align-items-end py-5"> <h2 class="logo h1 text-danger">Rotten potatoes</h2>
+    <div class="disc h3 w-75">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate facere eaque repellat dolore et, impedit dolor! Velit soluta vel a rem perspiciatis culpa quibusdam assumenda animi libero totam! Sequi, Voluptate facere eaque repellat dolore et, impedit dolor! Velit soluta vel a rem perspiciatis culpa quibusdam assumenda animi libero totam! Sequi earum!</div>
+
+    <div class="log-form text-start">
+      <div class="hint  fw-bolder ">
+    Hint: user name: <span class="text-success">mostafa</span>  & password:<span class="text-success">123</span>
+   </div>
+        <label for="user-name">User name</label>
+        <input class="form-control" id="user-name" type="text" [(ngModel)]="username" >
+        <label for="password">Password</label>
+        <input class="form-control" id="password" type="password" [(ngModel)]="password">
+        <p *ngIf="errMsg" class="text-danger">{{errMsg}}</p>
+        <button class="btn btn-dark my-3" (click)="submit()">Log in</button>
+    </div>
+  </div>
+  <!-- <img class="film col-md-5 bg-success" src="../../assets/icon.png" alt=""> -->
+
+
+</div>

@@ -1,0 +1,40 @@
+<div class="container-fluid row">
+  <div class="all-movies col-md-10 ps-5">
+    <h2 class="head  my-3">Our trending movies</h2>
+    <div class="row">
+      <div *ngFor="let item of data" class="col-md-4 ">
+       <a (click)="details(item.id)" > <img [src]="imgURL + item.poster_path" alt="" class="w-75 mt-4" ></a>
+       <h4 class="my-2 text-primary">{{item.title}}</h4>
+        <ngb-rating [(rate)]="item.vote_average">
+          <ng-template let-fill="fill" let-index="index">
+            <i class="bi-star{{fill === 100 ? '-fill' : ''}}"
+              [class.filled]="fill === 100"
+              [class.low]="index < 4"
+              [class.high]="index>6">
+            </i>
+          </ng-template>
+        </ngb-rating>
+        <pre class="h6">Rate: <b [class.filled]="item.vote_average>4 && item.vote_average<8"
+          [class.low]="item.vote_average<5 "
+          [class.highs]="item.vote_average>7 "
+          >{{item.vote_average}}</b></pre>
+          <!-- <p #ref >ID is : {{item.id}}</p> -->
+        <hr />
+
+      </div>
+    </div>
+  </div>
+  <div class="popular-movies col-md-2 ">
+    <div class="row ">
+      <h4 class="ms-5 mb-5 head  bg-warning rounded-2 p-2 mt-3">Most popular</h4>
+      <div
+        *ngFor="let item of people"
+        class="col-md-12 text-secondary my-2 ps-5 justify-content-center"
+      >
+        <img class="w-75" [src]="imgURL + item.profile_path" alt="" />
+        <h3>{{ item.name }}</h3>
+        <p>popularity :{{ item.popularity }}</p>
+      </div>
+    </div>
+  </div>
+</div>

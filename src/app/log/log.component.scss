@@ -1,0 +1,57 @@
+
+.log-container{
+    width: 100%;
+    min-height: calc(100vh - 65px) ;
+    background: linear-gradient(135deg,#ffe645 0%,#e2aa02 100%);
+
+    overflow: hidden;
+    .logo{
+
+        font-weight: bolder;
+        font-family: 'Creepster',cursive;
+        letter-spacing: 10px;
+
+
+    }
+    .disc{
+
+        font-family: 'aladin',cursive;
+
+        text-align: right;
+
+    }
+    .film{
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+
+    }
+    .log-form{
+
+        padding: 15px;
+
+
+        border-radius: 5px;
+        box-shadow: 5px 5px 20px #383838;
+        background-color: aliceblue;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        padding-top: 30px;
+        label{
+            font-weight: bold;
+            padding: 5px 1px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+}
+  .all{
+    background-image: url(../../assets/icon.png);
+    background-position: left;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+

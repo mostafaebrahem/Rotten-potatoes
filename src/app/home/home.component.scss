@@ -1,0 +1,64 @@
+.all-movies{
+    border-right: solid 1px #e2aa02;
+    min-height: calc(100vh - 65px);
+    font-family: 'Roboto',cursive;
+}
+.head{
+  position: relative;
+  margin-left: 20px;
+  font-family: 'Roboto',cursive;
+  font-weight: 700  ;
+  max-width: fit-content;
+}
+.head::before{
+  content: "";
+  width: 10px;
+  background-color: #e2aa02;
+  position: absolute;
+  top: 0;
+  left: -20px;
+  height:100% ;
+
+
+
+}
+.head::after{
+  content: "";
+  width: 50%;
+  background-color: #e2aa02;
+  position: absolute;
+  bottom: -10px;
+  left: calc(25%);
+  height:1px ;
+
+
+
+}
+i {
+  font-size: 1.5rem;
+  padding-right: 0.1rem;
+  color: #b0c4de;
+}
+.filled {
+  // color: #1e90ff;
+  color: #e2aa02;
+}
+.low {
+  color: #deb0b0;
+}
+.filled.low {
+  color: #ff1e1e;
+}
+.filled.high{
+  color: green;
+
+
+}
+.low{
+   color: #ff1e1e;
+
+}
+
+.highs{
+  color: green;
+}

@@ -1,0 +1,55 @@
+<div  class="container">
+
+  <div  class="row">
+    <div  class="col-md-4">
+      <img class="w-75 my-3" [src]="imgURL+movies.poster_path" alt="image not found at the time">
+
+    </div>
+    <div class="col-md-6 my-5 ">
+      <h2 class="title my-3 text-danger fw-bolder fs-1">{{movies.original_title}}</h2>
+      <p class="my-3 text-muted fs-5">{{movies.overview}}</p>
+      <form [formGroup]="reviewForm" (ngSubmit)="onSubmit()" class="rate">
+        <label class="my-3" for="uname">User name</label>
+        <input [(ngModel)]="userN" #uname class="form-control"  type="text" formControlName="userName" id="uname">
+        <label class="my-3" for="review">Review</label>
+        <input [(ngModel)]="userR" #rev class="form-control "  type="text" formControlName="userReview" id="uname">
+        <button (ngSubmit)="submitReview(reviewForm)" [formGroup]="reviewForm"   [disabled]="up!=''|| reviewForm.invalid" class="btn btn-dark px-4 py-2 my-3">Submit</button>
+        <button (ngSubmit)="submitReview(reviewForm)" [formGroup]="reviewForm" (click)="updateStatus()" [disabled]="up==''" class="btn btn-warning px-4 py-2 mx-2  my-3">Update</button>
+      </form>
+
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+       <table class=" table  ">
+      <thead class="text-warning bg-dark" >
+        
+        <th class="h3  p-2">User name</th>
+        <th class="h3 w-25 p-2">Review</th>
+        <th class="h3  p-2">Update</th>
+        <th class="h3 text-danger  p-2">Delete</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of reviewCartona ,let i = index">
+
+          <td>{{item.userName}}</td>
+          <td>{{item.userReview}}</td>
+          <td><button (click)="update(i)" class="btn btn-warning">Update</button></td>
+          <td><button (click)="delete(i)" class="btn btn-danger">Delete</button></td>
+
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- <div class="div col-md-8">
+      <h3 class="text-center">Users Reviews</h3>
+
+      <div class="sec bg-brimary">
+
+
+      </div>
+    </div> -->
+  </div>
+</div>
